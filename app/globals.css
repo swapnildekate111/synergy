@@ -1,26 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: var(--font-space-grotesk), "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+
+  /* Brand Palette Tokens */
+  --color-primary: #191a23;
+  --color-on-primary: #ffffff;
+  --color-secondary-fixed: #b9ff66;
+  --color-secondary-fixed-dim: #96d945;
+  --color-secondary: #3f6900;
+  --color-surface: #fafaf7;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-surface: #191a23;
+  --color-on-surface-variant: #47464b;
+  --color-outline: #77767c;
+  --color-outline-variant: #c8c5cc;
+  --color-tertiary-container: #1a1b24;
+  --color-tertiary-fixed-dim: #c6c5d0;
+  --color-on-tertiary-container: #83838d;
+  --color-on-secondary-fixed-variant: #2e4f00;
+  --color-secondary-container: #aef35c;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .brutal-shadow {
+    box-shadow: 4px 4px 0px #191a23;
+  }
+  .brutal-shadow-sm {
+    box-shadow: 3px 3px 0px #191a23;
+  }
+  .brutal-shadow-lg {
+    box-shadow: 6px 6px 0px #191a23;
+  }
+  .brutal-btn {
+    box-shadow: 4px 4px 0px #191a23;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .brutal-btn:hover {
+    box-shadow: 1px 1px 0px #191a23;
+  }
+  .brutal-btn:active {
+    box-shadow: 0px 0px 0px #191a23;
+  }
+  .brutal-card {
+    box-shadow: 5px 5px 0px #191a23;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .brutal-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px #191a23;
   }
 }
 
+/* Custom scrollbar and root settings */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
+  background-color: #fafaf7;
+  color: #191a23;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
 }
